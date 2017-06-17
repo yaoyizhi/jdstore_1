@@ -10,7 +10,7 @@
                 </tr>
             </thead>
             <tbody>
-                <% @cart_items.each do |cart_item|%>
+                <% current_cart.cart_items.each do |cart_item|%>
                     <tr>
                         <td><%= link_to product_path(cart_item.product) do %>
                                 <% if cart_item.product.image.present? %>
@@ -27,5 +27,15 @@
                 <% end %>
             </tbody>
         </table>
+        <br>
+        <div class="total clearfix">
+            <span class="pull-right">
+                <span>总计<%= render_cart_total_price(current_cart)%>RMB</span>
+            </span>
+        </div>
+        <hr>
+        <div class="checkout clearfix">
+            <%= link_to("确认结账", "#", method: :post, class: "btn btn-lg btn-danger pull-right")%>
+        </div>
     </div>
 </div>
