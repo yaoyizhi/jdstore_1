@@ -19,7 +19,7 @@ class Admin::OrdersController < ApplicationController
         redirect_to :back
     end
 
-    def shipped
+    def deliver
         @order = Order.find(params[:id])
         @order.deliver!
         redirect_to :back

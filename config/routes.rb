@@ -8,7 +8,7 @@ Rails.application.routes.draw do
             member do
                 post :cancel
                 post :ship
-                post :shipped
+                post :deliver
                 post :return
             end
         end
